@@ -24,10 +24,10 @@ SVM_IMG_WIDTH, SVM_IMG_HEIGHT = 256, 256 # From original SVM code example
 SVM_TARGET_SIZE = (SVM_IMG_WIDTH, SVM_IMG_HEIGHT)
 
 # Model paths (Update these to your actual saved model locations)
-RESNET_MODEL_PATH = 'best_resnet101_fish_disease_model.keras' # Or resnet101_fish_disease_model.keras
-GOOGLENET_MODEL_PATH = 'best_googlenet_fish_disease_model.keras' # Or googlenet_fish_disease_model.keras
-SVM_MODEL_PATH = 'fish_disease_svm_model.joblib' #
-SVM_SCALER_PATH = 'feature_scaler.joblib' #
+RESNET_MODEL_PATH = 'models/best_resnet101_fish_disease_model.keras' # Or resnet101_fish_disease_model.keras
+GOOGLENET_MODEL_PATH = 'models/best_googlenet_fish_disease_model.keras' # Or googlenet_fish_disease_model.keras
+SVM_MODEL_PATH = 'models/fish_disease_svm_model.joblib' #
+SVM_SCALER_PATH = 'models/feature_scaler.joblib' #
 
 # --- Ensemble Weights (Adjust based on model performance or tuning) ---
 # Example: Equal weights
