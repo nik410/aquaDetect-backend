@@ -15,30 +15,11 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # This is a placeholder for your actual Python image processing logic
 def process_image_with_python_file(image_path):
-    """
-    Simulates processing an image using a Python file/function.
-    In a real scenario, you would:
-    1. Import your image processing functions from another Python file.
-    2. Load the image using a library like Pillow (PIL) or OpenCV.
-    3. Perform your desired operations (e.g., resizing, filtering, analysis).
-    4. Return results or save a processed image.
-    """
-    print(f"Simulating processing for image: {image_path}")
-    # Example: You might load the image like this if using Pillow:
-    # from PIL import Image
-    # img = Image.open(image_path)
-    # # Perform some operation, e.g., convert to grayscale
-    # img = img.convert('L')
-    # # Save processed image or return data
-    # processed_path = os.path.join(app.config['UPLOAD_FOLDER'], 'processed_' + os.path.basename(image_path))
-    # img.save(processed_path)
-    # return {"status": "success", "processed_image_path": processed_path}
-
-    # For now, just return a success message
+    #this is where we will include the image to be passed to out model
     return {"status": "success", "message": f"Image '{os.path.basename(image_path)}' processed successfully."}
 
 
-@app.route('/upload-image', methods=['POST'])
+@app.route('/uploadimg', methods=['POST'])
 def upload_image():
     # Check if a file was sent in the request
     if 'image' not in request.files:
