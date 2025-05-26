@@ -1,3 +1,6 @@
 .idea
 .venv
 uploads
+models/best_resnet101_fish_disease_model.keras
+models/best_googlenet_fish_disease_model.keras
+.DS_Store
