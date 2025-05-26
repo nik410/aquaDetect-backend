@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
-
+import app as model
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all origins, or specify your frontend origin for security
 
@@ -11,12 +11,17 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+model.initialize_models()
 
 # This is a placeholder for your actual Python image processing logic
 def process_image_with_python_file(image_path):
     #this is where we will include the image to be passed to out model
-    return {"status": "success", "message": f"Image '{os.path.basename(image_path)}' processed successfully."}
+    prediction, confidence, display_image = model.predict_disease(image_path)
+    base64=model.convert_image_to_base64(display_image)
+    return {"status": prediction,
+            "message": f"Image '{os.path.basename(image_path)}' processed successfully.",
+            "confidence": confidence,
+            "display_image": base64}
 
 
 @app.route('/uploadimg', methods=['POST'])
