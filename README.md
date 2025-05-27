@@ -5,7 +5,7 @@ How to run?
 
 `git clone https://github.com/nik410/aquaDetect-backend.git`
 
-### Open aquadetect-backend project in pycharm
+### Open aquaDetect-backend project in pycharm
 
 ##### create a .venv
 `Settings-> Project:aquadetect-backend-> Python Interpreter-> Add interpreter-> Add local interpreter`  
