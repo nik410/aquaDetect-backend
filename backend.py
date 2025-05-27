@@ -3,7 +3,8 @@ from flask_cors import CORS
 import os
 import app as model
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all origins, or specify your frontend origin for security
+CORS(app, origins=["http://localhost:5173"], supports_credentials=True)
+  # Enable CORS for all origins, or specify your frontend origin for security
 
 # Define a directory to save uploaded images
 UPLOAD_FOLDER = 'uploads'
