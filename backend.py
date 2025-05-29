@@ -22,6 +22,7 @@ def process_image_with_python_file(image_path):
     return {"status": prediction,
             "message": f"Image '{os.path.basename(image_path)}' processed successfully.",
             "confidence": confidence,
+            "result": f"The Fish belong to class {prediction} and the confidence is: {confidence}",
             "display_image": base64}
 
 
